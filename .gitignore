@@ -1,0 +1,13 @@
+node_modules
+
+#Idea metadata
+.idea
+*.iml
+
+#VSCode
+.vscode
+
+#Mac files
+.DS_Store
+
+package-lock.json

@@ -1,0 +1,19 @@
+{
+  "name": "css-only-loaders",
+  "version": "0.1.0",
+  "author": "Michał Iwanow",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "autoprefixer": "^8.2.0",
+    "cssnano": "^3.10.0",
+    "node-sass": "^4.8.3",
+    "postcss": "^6.0.21",
+    "postcss-cli": "^5.0.0"
+  },
+  "scripts": {
+    "build:css": "node-sass --source-map true --include-path scss src/loaders.scss loaders.css",
+    "minify:css": "postcss --use autoprefixer -b 'last 2 versions' < loaders.css | postcss --use cssnano > loaders.min.css",
+    "build": "npm run build:css && npm run minify:css"
+  }
+}
