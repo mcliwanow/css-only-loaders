@@ -1,0 +1,35 @@
+@import "../config";
+
+.bar {
+  min-height: #{2 * $paddingVertical + $bar-height};
+
+  &::before,
+  &::after {
+    border-radius: $bar-borderRadius;
+    height: $bar-height;
+    top: 50%;
+    margin-top: #{$bar-height / -2};
+  }
+
+  &::before {
+    background-color: $bar-backgroundColor;
+    margin-left: #{(100% - $bar-width) / 2};
+    width: $bar-width;
+  }
+
+  &::after {
+    background-color: $bar-color;
+    width: $bar-innerWidth;
+
+    animation: loadBar infinite 2s alternate;
+  }
+
+  @keyframes loadBar {
+    from {
+      left: #{(100% - $bar-width) / 2}
+    }
+    to {
+      left: #{100% - $bar-innerWidth - ((100% - $bar-width) / 2)}
+    }
+  }
+}

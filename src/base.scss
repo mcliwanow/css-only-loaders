@@ -1,0 +1,28 @@
+@import "config";
+
+.loader {
+  position: relative;
+
+  &::after,
+  &::before {
+    max-height: 100%;
+    max-width: 100%;
+    position: absolute;
+    content: "";
+  }
+
+  &.full-page,
+  &.on-element {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $onElementBackground;
+  }
+
+  &.full-page {
+    position: fixed;
+    background-color: $fullPageBackground;
+  }
+}

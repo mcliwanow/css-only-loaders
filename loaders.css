@@ -1,2 +1,41 @@
+.loader {
+  position: relative; }
+  .loader::after, .loader::before {
+    max-height: 100%;
+    max-width: 100%;
+    position: absolute;
+    content: ""; }
+  .loader.full-page, .loader.on-element {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.6); }
+  .loader.full-page {
+    position: fixed;
+    background-color: white; }
+
+.bar {
+  min-height: 25px; }
+  .bar::before, .bar::after {
+    border-radius: 3px;
+    height: 5px;
+    top: 50%;
+    margin-top: -2.5px; }
+  .bar::before {
+    background-color: #c8c8c8;
+    margin-left: 10%;
+    width: 80%; }
+  .bar::after {
+    background-color: #c80069;
+    width: 16%;
+    animation: loadBar infinite 2s alternate; }
+
+@keyframes loadBar {
+  from {
+    left: 10%; }
+  to {
+    left: 74%; } }
 
 /*# sourceMappingURL=loaders.css.map */
