@@ -4,10 +4,15 @@ $onElementBackground: rgba(255, 255, 255, 0.6);
 
 $paddingVertical: 10px;
 
+// Default loader
+$default-size: 45px;
+$default-width: 5px;
+$default-color: rgba(200, 0, 105, 1);
+
 // Bar loader
 $bar-height: 5px;
 $bar-width: 80%;
 $bar-innerWidth: 16%;
 $bar-borderRadius: 3px;
 $bar-backgroundColor: rgba(200, 200, 200, 1);
-$bar-color: rgba(200, 0, 105, 1);
+$bar-color: $default-color;

@@ -1,10 +1,12 @@
 .loader {
-  position: relative; }
+  position: relative;
+  box-sizing: border-box; }
   .loader::after, .loader::before {
     max-height: 100%;
     max-width: 100%;
     position: absolute;
-    content: ""; }
+    content: "";
+    box-sizing: border-box; }
   .loader.full-page, .loader.on-element {
     position: absolute;
     top: 0;
@@ -16,18 +18,41 @@
     position: fixed;
     background-color: white; }
 
-.bar {
+.loader-default {
+  min-height: 65px; }
+  .loader-default::before {
+    border-radius: 50%;
+    border: 5px solid rgba(200, 0, 105, 0.4);
+    border-left-color: #c80069;
+    height: 45px;
+    width: 45px;
+    top: 50%;
+    left: 50%;
+    margin-top: -22.5px;
+    margin-left: -22.5px;
+    transform: rotateZ(360deg);
+    animation: defaultAnimation 1.35s infinite linear; }
+  .loader-default::after {
+    display: none; }
+
+@keyframes defaultAnimation {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
+.loader-bar {
   min-height: 25px; }
-  .bar::before, .bar::after {
+  .loader-bar::before, .loader-bar::after {
     border-radius: 3px;
     height: 5px;
     top: 50%;
     margin-top: -2.5px; }
-  .bar::before {
+  .loader-bar::before {
     background-color: #c8c8c8;
     margin-left: 10%;
     width: 80%; }
-  .bar::after {
+  .loader-bar::after {
     background-color: #c80069;
     width: 16%;
     animation: loadBar infinite 2s alternate; }

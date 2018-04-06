@@ -2,6 +2,7 @@
 
 .loader {
   position: relative;
+  box-sizing: border-box;
 
   &::after,
   &::before {
@@ -9,6 +10,7 @@
     max-width: 100%;
     position: absolute;
     content: "";
+    box-sizing: border-box;
   }
 
   &.full-page,

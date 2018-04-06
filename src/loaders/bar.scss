@@ -1,6 +1,6 @@
 @import "../config";
 
-.bar {
+.loader-bar {
   min-height: #{2 * $paddingVertical + $bar-height};
 
   &::before,

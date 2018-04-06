@@ -1,0 +1,34 @@
+@import "../config";
+
+.loader-default {
+  min-height: #{2 * $paddingVertical + $default-size};
+
+  &::before {
+    border-radius: 50%;
+    border: $default-width solid rgba($default-color, 0.4);
+    border-left-color: $default-color;
+
+    height: $default-size;
+    width: $default-size;
+    top: 50%;
+    left: 50%;
+    margin-top: #{$default-size / -2};
+    margin-left: #{$default-size / -2};
+
+    transform: rotateZ(360deg);
+    animation: defaultAnimation 1.35s infinite linear;
+  }
+
+  &::after {
+    display: none;
+  }
+
+  @keyframes defaultAnimation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
