@@ -1,0 +1,56 @@
+@import "../config";
+
+.loader-dots {
+  min-height: #{2 * $paddingVertical + $dots-size};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::after {
+    background-color: transparent;
+    border-radius: 50%;
+    width: $dots-size;
+    height: $dots-size;
+    margin-top: -$dots-size;
+
+    animation: dots $dots-time linear infinite;
+  }
+
+  @mixin dotsShadow($leftBg, $middleBg, $rightBg) {
+    box-shadow: -#{$dots-spacing + $dots-size} $dots-size 0 0 $leftBg, 0 $dots-size 0 0 $middleBg, #{$dots-spacing + $dots-size} $dots-size 0 0 $rightBg;
+  }
+
+  @keyframes dots {
+    0% {
+      @include dotsShadow(rgba($dots-color, 0), rgba($dots-color, 0), rgba($dots-color, 0));
+    }
+
+    5% {
+      @include dotsShadow(rgba($dots-color, 0.5), rgba($dots-color, 0), rgba($dots-color, 0));
+    }
+
+    15% {
+      @include dotsShadow(rgba($dots-color, 1), rgba($dots-color, 0), rgba($dots-color, 0));
+    }
+
+    35% {
+      @include dotsShadow(rgba($dots-color, 1), rgba($dots-color, 0.5), rgba($dots-color, 0));
+    }
+
+    45% {
+      @include dotsShadow(rgba($dots-color, 1), rgba($dots-color, 1), rgba($dots-color, 0));
+    }
+
+    65% {
+      @include dotsShadow(rgba($dots-color, 1), rgba($dots-color, 1), rgba($dots-color, 0.5));
+    }
+
+    75% {
+      @include dotsShadow(rgba($dots-color, 1), rgba($dots-color, 1), rgba($dots-color, 1));
+    }
+
+    95% {
+      @include dotsShadow(rgba($dots-color, 0), rgba($dots-color, 0), rgba($dots-color, 0));
+    }
+  }
+}
