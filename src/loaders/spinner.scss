@@ -1,0 +1,61 @@
+@import "../config";
+@import "../math";
+
+.loader-spinner {
+  $elementsCount: 12;
+  $loopCount: $elementsCount - 1;
+
+  min-height: #{2 * $paddingVertical + ($spinner-circle-size * 6)};
+  min-width: #{$spinner-circle-size * 6};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::after {
+    background-color: transparent;
+    border-radius: 50%;
+    width: $spinner-circle-size;
+    height: $spinner-circle-size;
+
+    animation: spinner $spinner-time linear infinite;
+  }
+
+  @function getItemShadow($position, $currentPosition) {
+    $itemsToHighlight: 8;
+    $angle: 360deg * $position / $elementsCount;
+    $x: #{2.5* $spinner-circle-size * cos($angle)};
+    $y: #{2.5* $spinner-circle-size * sin($angle)};
+    $distance: $currentPosition - $position - $itemsToHighlight;
+    $alphaFactor: 0;
+    @if $distance < -$elementsCount {
+      $distance: $distance + $elementsCount;
+    }
+
+    @if $distance < 0 and $distance >= -$itemsToHighlight {
+      $alphaFactor: abs($distance) / $itemsToHighlight;
+    }
+
+    $color: rgba($spinner-color, 0.2 + (0.8 * $alphaFactor));
+    @return $x $y 0 0 $color;
+  }
+
+  @mixin spinnerShadow($position) {
+    $shadow: "";
+    @for $i from 0 through $loopCount {
+      $shadow: $shadow + getItemShadow($i, $position);
+      @if $i != $loopCount {
+        $shadow: $shadow + ", ";
+      }
+    }
+
+    box-shadow: #{unquote($shadow)};
+  }
+
+  @keyframes spinner {
+    @for $i from 0 through $loopCount {
+      #{$i * (100 / $loopCount) * 1%} {
+        @include spinnerShadow($i);
+      }
+    }
+  }
+}
