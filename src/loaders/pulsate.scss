@@ -1,0 +1,37 @@
+@import "../config";
+
+.loader-pulsate {
+  min-height: #{2 * $paddingVertical + $pulsate-size};
+  min-width: $pulsate-size;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::after {
+    border-radius: 50%;
+    border: $pulsate-width $pulsate-color solid;
+    width: $pulsate-size;
+    height: $pulsate-size;
+    transform: scale(0.2);
+    will-change: transform;
+
+    animation: pulsate $pulsate-time ease-out infinite;
+  }
+
+  @keyframes pulsate {
+    0% {
+      transform: scale(0.2);
+      opacity: 0;
+    }
+
+    50% {
+      opacity: 1;
+    }
+
+    100% {
+      transform: scale(1);
+      opacity: 0;
+    }
+  }
+
+}
