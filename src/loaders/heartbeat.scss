@@ -1,0 +1,61 @@
+@import "../config";
+
+.loader-heartbeat {
+  min-height: #{2 * $paddingVertical + $heartbeat-size};
+  min-width: $heartbeat-size;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::after,
+  &::before {
+    background-color: $heartbeat-color;
+    border-radius: #{$heartbeat-size * 0.625} #{$heartbeat-size * 0.625} 0 0;
+    height: $heartbeat-size;
+    width: #{$heartbeat-size * 0.625};
+  }
+
+  &::before {
+    transform: translateX(-21%) rotate(-45deg);
+    animation: heartbeatLeft 1s infinite;
+  }
+
+  &::after {
+    transform: translateX(21%) rotate(45deg);
+    animation: heartbeatRight 1s infinite;
+  }
+
+  @mixin heartbeatAnimation($rotationAngle, $translateX) {
+    0% {
+      transform: scale(.75) translateX($translateX) rotate($rotationAngle);
+    }
+
+    20% {
+      transform: scale(1) translateX($translateX) rotate($rotationAngle);
+    }
+
+    40% {
+      transform: scale(.75) translateX($translateX) rotate($rotationAngle);
+    }
+
+    60% {
+      transform: scale(1) translateX($translateX) rotate($rotationAngle);
+    }
+
+    80% {
+      transform: scale(.75) translateX($translateX) rotate($rotationAngle);
+    }
+
+    100% {
+      transform: scale(.75) translateX($translateX) rotate($rotationAngle);
+    }
+  }
+
+  @keyframes heartbeatLeft {
+    @include heartbeatAnimation(-45deg, -21%);
+  }
+
+  @keyframes heartbeatRight {
+    @include heartbeatAnimation(45deg, 21%);
+  }
+}

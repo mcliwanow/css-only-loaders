@@ -158,4 +158,50 @@
     transform: scale(1);
     opacity: 0; } }
 
+.loader-heartbeat {
+  min-height: 50px;
+  min-width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .loader-heartbeat::after, .loader-heartbeat::before {
+    background-color: #c80069;
+    border-radius: 18.75px 18.75px 0 0;
+    height: 30px;
+    width: 18.75px; }
+  .loader-heartbeat::before {
+    transform: translateX(-21%) rotate(-45deg);
+    animation: heartbeatLeft 1s infinite; }
+  .loader-heartbeat::after {
+    transform: translateX(21%) rotate(45deg);
+    animation: heartbeatRight 1s infinite; }
+
+@keyframes heartbeatLeft {
+  0% {
+    transform: scale(0.75) translateX(-21%) rotate(-45deg); }
+  20% {
+    transform: scale(1) translateX(-21%) rotate(-45deg); }
+  40% {
+    transform: scale(0.75) translateX(-21%) rotate(-45deg); }
+  60% {
+    transform: scale(1) translateX(-21%) rotate(-45deg); }
+  80% {
+    transform: scale(0.75) translateX(-21%) rotate(-45deg); }
+  100% {
+    transform: scale(0.75) translateX(-21%) rotate(-45deg); } }
+
+@keyframes heartbeatRight {
+  0% {
+    transform: scale(0.75) translateX(21%) rotate(45deg); }
+  20% {
+    transform: scale(1) translateX(21%) rotate(45deg); }
+  40% {
+    transform: scale(0.75) translateX(21%) rotate(45deg); }
+  60% {
+    transform: scale(1) translateX(21%) rotate(45deg); }
+  80% {
+    transform: scale(0.75) translateX(21%) rotate(45deg); }
+  100% {
+    transform: scale(0.75) translateX(21%) rotate(45deg); } }
+
 /*# sourceMappingURL=loaders.css.map */
