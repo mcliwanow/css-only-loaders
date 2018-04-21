@@ -1,0 +1,40 @@
+@import "../config";
+
+.loader-circles {
+  min-height: #{2 * $paddingVertical + $circles-size};
+  min-width: $circles-size;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::before {
+    background-color: transparent;
+    border-radius: 50%;
+    border: $circles-width dashed $circles-inner-color;
+    width: #{$circles-size - ($circles-width * 2) - 3};
+    height: #{$circles-size - ($circles-width * 2) - 2};
+
+    animation: spinCirclesCounterClockwise $circles-time linear infinite;
+  }
+
+  &::after {
+    background-color: transparent;
+    border-radius: 50%;
+    border: $circles-width dashed $circles-outer-color;
+    width: $circles-size;
+    height: $circles-size;
+
+    animation: spinCircles $circles-time linear infinite;
+  }
+
+  @keyframes spinCircles {
+    from {transform: rotate(0deg); }
+    to {transform: rotate(360deg);}
+  }
+
+  @keyframes spinCirclesCounterClockwise {
+    from {transform: rotate(360deg); }
+    to {transform: rotate(0deg);}
+  }
+
+}

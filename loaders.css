@@ -204,4 +204,37 @@
   100% {
     transform: scale(0.75) translateX(21%) rotate(45deg); } }
 
+.loader-circles {
+  min-height: 60px;
+  min-width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .loader-circles::before {
+    background-color: transparent;
+    border-radius: 50%;
+    border: 4px dashed #c80069;
+    width: 29px;
+    height: 30px;
+    animation: spinCirclesCounterClockwise 3.2s linear infinite; }
+  .loader-circles::after {
+    background-color: transparent;
+    border-radius: 50%;
+    border: 4px dashed #c80069;
+    width: 40px;
+    height: 40px;
+    animation: spinCircles 3.2s linear infinite; }
+
+@keyframes spinCircles {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
+@keyframes spinCirclesCounterClockwise {
+  from {
+    transform: rotate(360deg); }
+  to {
+    transform: rotate(0deg); } }
+
 /*# sourceMappingURL=loaders.css.map */
