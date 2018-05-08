@@ -16,6 +16,7 @@
     border-radius: 50%;
     width: $spinner-circle-size;
     height: $spinner-circle-size;
+    transform: translateZ(0);
 
     animation: spinner $spinner-time linear infinite;
   }

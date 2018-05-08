@@ -105,6 +105,7 @@
     border-radius: 50%;
     width: 10px;
     height: 10px;
+    transform: translateZ(0);
     animation: spinner 1.4s linear infinite; }
 
 @keyframes spinner {
@@ -236,5 +237,26 @@
     transform: rotate(360deg); }
   to {
     transform: rotate(0deg); } }
+
+.loader-progress {
+  min-height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; }
+  .loader-progress::after {
+    width: 80%;
+    height: 10px;
+    border-radius: 3px;
+    background-size: 20px 20px;
+    background-color: #c80069;
+    background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    animation: progress infinite 2s linear; }
+
+@keyframes progress {
+  0% {
+    background-position: 0 0; }
+  100% {
+    background-position: 40px 0; } }
 
 /*# sourceMappingURL=loaders.css.map */
