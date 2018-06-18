@@ -17,19 +17,25 @@ For example to render loader bar you could write:
 <div class="loader loader-bar"></div>
 ```
 
+#### Cover whole page
 To display full page loader add `.full-page` class to the element. For example:
 ```
 <div class="loader loader-default full-page"></div>
 ```
 
+#### Cover single element
 To cover relatively positioned parent with the loader add `.on-element` class to loader element. For example:
 ```
 <div class="loader loader-default on-element"></div>
 ```
 
-// TODO: how it looks - before and after
+Example:
 
-Possible loader types with their respective classes are shown before.
+`div` with text content
+![div without loader](images/before.gif)
+
+`div` with text content covered with loader
+![div with loader](images/after.gif)
 
     
 ## Loader Types
@@ -47,9 +53,33 @@ Possible loader types with their respective classes are shown before.
     
     
 ## Config and build
-    - variables to change
-    - how to build next version
-    - how to build individual loaders 
+
+### Build
+To build minified css file with updated configuration run command:
+```
+npm run build
+```
+When it completes you should have a minified `loaders.css` file in your directory.
+
+### Build single loaders
+TODO
+    
+### Customization
+All the variables regarding loader sizes and colors are located in `base.scss` file.
+You can set specific colors and sizes for each loader type
+and/or you can change the colors of all loaders by changing the value of `$mainColor` variable (in `base.scss` file).
+
+Sample configuration:
+```sass
+$mainColor: rgba(200, 0, 105, 1);
+
+...
+
+// Heartbeat loader
+$heartbeat-size: 30px;
+$heartbeat-color: $mainColor;
+$heartbeat-time: 1.35s;
+```
 
 ## License
 MIT License

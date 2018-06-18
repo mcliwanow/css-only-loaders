@@ -1,4 +1,5 @@
 // Base
+$mainColor: rgba(200, 0, 105, 1);
 $fullPageBackground: rgba(255, 255, 255, 1);
 $onElementBackground: rgba(255, 255, 255, 0.6);
 
@@ -7,7 +8,7 @@ $paddingVertical: 10px;
 // Default loader
 $default-size: 45px;
 $default-width: 5px;
-$default-color: rgba(200, 0, 105, 1);
+$default-color: $mainColor;
 
 // Bar loader
 $bar-height: 5px;
@@ -15,41 +16,41 @@ $bar-width: 80%;
 $bar-innerWidth: 16%;
 $bar-borderRadius: 3px;
 $bar-backgroundColor: rgba(200, 200, 200, 1);
-$bar-color: $default-color;
+$bar-color: $mainColor;
 
 // Dots loader
 $dots-size: 6px;
 $dots-spacing: 4px;
-$dots-color: $default-color;
+$dots-color: $mainColor;
 $dots-time: 1.6s;
 
 // Spinner loader
 $spinner-circle-size: 10px;
-$spinner-color: $default-color;
+$spinner-color: $mainColor;
 $spinner-time: 1.4s;
 
 // Pulsate loader
 $pulsate-size: 40px;
 $pulsate-width: 5px;
-$pulsate-color: $default-color;
+$pulsate-color: $mainColor;
 $pulsate-time: 1.35s;
 
 // Heartbeat loader
 $heartbeat-size: 30px;
-$heartbeat-color: $default-color;
+$heartbeat-color: $mainColor;
 $heartbeat-time: 1.35s;
 
 // Circles loader
 $circles-size: 40px;
 $circles-width: 4px;
-$circles-outer-color: $default-color;
-$circles-inner-color: $default-color;
+$circles-outer-color: $mainColor;
+$circles-inner-color: $mainColor;
 $circles-time: 3.2s;
 
 // Progress bars loader
 $progress-height: 10px;
 $progress-width: 80%;
 $progress-barWidth: 7px;
-$progress-color: $default-color;
+$progress-color: $mainColor;
 $progress-time: 2s;
 $progress-borderRadius: 3px;
