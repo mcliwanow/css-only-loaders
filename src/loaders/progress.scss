@@ -1,6 +1,9 @@
+@import "../base";
 @import "../config";
 
 .loader-progress {
+  @include loader;
+
   min-height: #{2 * $paddingVertical + $progress-height};
   display: flex;
   justify-content: center;

@@ -1,6 +1,9 @@
+@import "../base";
 @import "../config";
 
 .loader-heartbeat {
+  @include loader;
+
   min-height: #{2 * $paddingVertical + $heartbeat-size};
   min-width: $heartbeat-size;
   display: flex;

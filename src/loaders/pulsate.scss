@@ -1,6 +1,9 @@
+@import "../base";
 @import "../config";
 
 .loader-pulsate {
+  @include loader;
+
   min-height: #{2 * $paddingVertical + $pulsate-size};
   min-width: $pulsate-size;
   display: flex;

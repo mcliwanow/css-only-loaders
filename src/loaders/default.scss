@@ -1,6 +1,9 @@
+@import "../base";
 @import "../config";
 
-.loader-default {
+.loader {
+  @include loader;
+
   min-height: #{2 * $paddingVertical + $default-size};
 
   &::before {

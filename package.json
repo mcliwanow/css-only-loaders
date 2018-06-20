@@ -12,8 +12,24 @@
     "postcss-cli": "^5.0.0"
   },
   "scripts": {
+    "build:default": "node-sass --source-map true --include-path scss src/loaders/default.scss loader.css",
+    "build:bar": "node-sass --source-map true --include-path scss src/loaders/bar.scss loader.css",
+    "build:circles": "node-sass --source-map true --include-path scss src/loaders/circles.scss loader.css",
+    "build:dots": "node-sass --source-map true --include-path scss src/loaders/dots.scss loader.css",
+    "build:heartbeat": "node-sass --source-map true --include-path scss src/loaders/heartbeat.scss loader.css",
+    "build:progress": "node-sass --source-map true --include-path scss src/loaders/progress.scss loader.css",
+    "build:pulsate": "node-sass --source-map true --include-path scss src/loaders/pulsate.scss loader.css",
+    "build:spinner": "node-sass --source-map true --include-path scss src/loaders/spinner.scss loader.css",
     "build:css": "node-sass --source-map true --include-path scss src/loaders.scss loaders.css",
+    "minify:single": "postcss --use autoprefixer -b 'last 2 versions' < loader.css | postcss --use cssnano > loader.min.css",
     "minify:css": "postcss --use autoprefixer -b 'last 2 versions' < loaders.css | postcss --use cssnano > loaders.min.css",
-    "build": "npm run build:css && npm run minify:css"
+    "single:bar": "npm run build:bar && npm run minify:single",
+    "single:circles": "npm run build:circles && npm run minify:single",
+    "single:default": "npm run build:default && npm run minify:single",
+    "single:dots": "npm run build:dots && npm run minify:single",
+    "single:heartbeat": "npm run build:heartbeat && npm run minify:single",
+    "single:progress": "npm run build:progress && npm run minify:single",
+    "single:pulsate": "npm run build:pulsate && npm run minify:single",
+    "single:spinner": "npm run build:spinner && npm run minify:single"
   }
 }

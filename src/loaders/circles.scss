@@ -1,6 +1,9 @@
+@import "../base";
 @import "../config";
 
 .loader-circles {
+  @include loader;
+
   min-height: #{2 * $paddingVertical + $circles-size};
   min-width: $circles-size;
   display: flex;

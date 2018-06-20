@@ -1,6 +1,6 @@
 @import "config";
 
-.loader {
+@mixin loader {
   position: relative;
   box-sizing: border-box;
 

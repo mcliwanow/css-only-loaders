@@ -1,6 +1,9 @@
+@import "../base";
 @import "../config";
 
 .loader-bar {
+  @include loader;
+
   min-height: #{2 * $paddingVertical + $bar-height};
 
   &::before,

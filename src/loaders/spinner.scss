@@ -1,7 +1,10 @@
+@import "../base";
 @import "../config";
 @import "../math";
 
 .loader-spinner {
+  @include loader;
+
   $elementsCount: 12;
   $loopCount: $elementsCount - 1;
 

@@ -1,6 +1,9 @@
+@import "../base";
 @import "../config";
 
 .loader-dots {
+  @include loader;
+
   min-height: #{2 * $paddingVertical + $dots-size};
   display: flex;
   justify-content: center;
